@@ -1,0 +1,30 @@
+#add-tree-nodes{
+	padding:20px;
+	width:400px;
+	height:300px;
+}
+#add-tree-nodes label{
+	display:inline-block;
+	padding:5px;
+	width:75px;
+	
+	color:rgb(81,135,181);
+	font-weight:bold;
+	font-size:14px;
+	font-family:"microsoft yahei";
+}
+#add-tree-nodes option{
+	padding:5px 5px 5px 20px;
+	
+	font-size:14px;
+	font-family:"microsoft yahei";
+}
+
+#permission-add-btn-div{
+	text-align:center;
+}
+
+#permission-add-btn-div a{
+	padding:5px;
+	width:70px;
+}

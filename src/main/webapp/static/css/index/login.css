@@ -1,0 +1,108 @@
+
+body{
+	background:rgb(60,120,160);
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+.main{
+	margin:0;
+	padding:0;	
+}
+
+.box-container{
+	padding-top:80px;
+	height:525px;
+	
+}
+.title-div{
+	margin:0 auto;
+	padding:20px;
+	
+	width:500px;
+	height:70px;
+}
+.title-div span{
+	display:inherit;
+	width:100%;
+	
+	color:#ffffff;
+	text-align:center;
+	line-height:30px;
+	font-size:28px;
+	font-weight: bold;
+	font-family: "microsoft yahei";
+	
+}
+
+.login-panel {  
+    /* Required for IE 5, 6, 7 */  
+    /* ...or something to trigger hasLayout, like zoom: 1; */  
+    margin:0 auto;
+    width:500px;  
+    height:300px;  
+    
+    border:3px solid #ffffff;
+    border-top-right-radius:140px;
+    border-bottom-left-radius:140px;
+   
+}
+
+.input-bg-div{
+	 width:494px;  
+     height:294px;  
+     border-top-right-radius:130px;
+     border-bottom-left-radius:130px;
+	 background:#ffffff;  
+    /* older safari/Chrome browsers */  
+    -webkit-opacity: 0.5;  
+    /* Netscape and Older than Firefox 0.9 */  
+    -moz-opacity: 0.5;  
+    /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/  
+    -khtml-opacity: 0.5;  
+    /* IE9 + etc...modern browsers */  
+    opacity: .5;  
+    /* IE 4-9 */  
+    filter:alpha(opacity=50);  
+    /*This works in IE 8 & 9 too*/  
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";  
+    /*IE4-IE9*/  
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);  
+    z-index:0;
+}
+.input-bg-div img{
+	margin-top:80px;
+	margin-left:15px;
+}
+#login-div{
+	position:relative;
+	margin-top:-300px;
+	z-index:5;
+}
+#login-warn-div{
+	margin:55px 0px 10px 215px;
+	width:200px;
+	height:40px;
+}
+#login-warn-msg{
+	padding:5px;
+}
+#login-warn-msg a{
+	right:0;
+}
+.controls img{
+	width:30px;
+	height:30px;
+}
+#login-btn{
+	
+	margin-left:35px;
+	width:205px;
+	
+	background:rgb(17,153,250);
+	color:#ffffff;
+	font-family: "microsoft yahei";
+	font-size:16px;
+	font-weight:bold;
+	letter-spacing: 12px;
+}

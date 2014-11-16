@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!-- 开启使用开发模式，详细错误提示 -->
+    <constant name="struts.devMode" value="true" />
+    <!-- 将对象交给spring管理 -->
+    <constant name="struts.objectFactory" value="spring" />
+    <!-- 指定资源编码类型 -->
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 指定每次请求到达，重新加载资源文件 -->
+    <constant name="struts.i18n.reload" value="true" />
+    <!-- 指定每次配置文件更改后，自动重新加载 -->
+    <constant name="struts.configuration.xml.reload" value="false" />
+    <!-- 国际化资源文件 -->
+    <constant name="struts.custom.i18n.resources" value="config/content/Language" />
+    <!-- 默认后缀名 -->
+    <constant name="struts.action.extension" value="do,action" />
+    
+    
+     <package name="home" namespace="/" extends="struts-default">
+	   <default-action-ref name="index" />
+	   <action name="index" >
+	       <result name="success">html/index.html</result>
+	   </action>
+	</package>
+    
+    
+    <package name="custom-default" extends="json-default">  
+        <!-- 继承默认的 struts2 配置文件 -->  
+         <interceptors>  
+           <interceptor name="checkLogin"  class="framework.tools.CheckLoginInterceptor">  
+           <param name="includeMethods">verify,account,mywegou</param>
+           </interceptor>
+            <interceptor-stack name="checkLoginStack">       
+                <interceptor-ref name="defaultStack"></interceptor-ref>
+                <interceptor-ref name="checkLogin"></interceptor-ref> 
+            </interceptor-stack>  
+        </interceptors>   
+        <!-- 设置全局 全局默认的拦截器栈-->  
+        <default-interceptor-ref name="checkLoginStack"></default-interceptor-ref>   
+        <!-- 定义全局Result -->  
+        <global-results>  
+            <!-- 当返回login视图名时，转入/login.jsp页面 -->  
+            <result name="login">/home.action</result>  
+        </global-results>  
+    </package>  
+    
+</struts>

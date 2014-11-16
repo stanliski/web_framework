@@ -1,0 +1,27 @@
+#main{
+	
+}
+#menu{
+
+}
+.sub-menu{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.sub-menu li{
+	padding:5px;
+	border-bottom:1px solid;
+	border-color:#d4d4d4;
+}
+.sub-menu li a{
+	display:inherit;
+	cursor:pointer;
+	padding-left:4em;
+	text-decoration:none;
+	font-weight:bold;
+	color:rgb(81,135,181);
+}
+.sub-menu li a:hover{
+	color:red;
+}

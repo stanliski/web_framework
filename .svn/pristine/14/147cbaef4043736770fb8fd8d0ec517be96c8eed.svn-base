@@ -1,0 +1,70 @@
+package com.jufengniao.email;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.jufengniao.master.entity.EmailTemplate;
+
+/**
+ * 
+ * Email Generatation Factory.
+ * 
+ * @author stanley_hwang
+ *
+ */
+public class EmailGenerator {
+
+	private static EmailGenerator _instance;
+	
+	/**
+	 * 单例模式保证每次只有一个
+	 * @return
+	 */
+	public static EmailGenerator getInstance(){
+		if(_instance == null){
+			synchronized(EmailGenerator.class){
+				if(_instance == null){
+					_instance = new EmailGenerator();
+				}
+			}
+		}
+		return _instance;
+	}
+	
+	private EmailGenerator(){}
+
+	/**
+	 * 创建激活邮件
+	 * @param sendTo
+	 * @return
+	 */
+	public BaseEmail createActivationEmail(String sendTo, EmailTemplate template){
+		BaseEmail email = new ActivationEmail(sendTo, template);
+		email.config();
+		email.create();
+		return email;
+	}
+	
+	/**
+	 * 创建重置密码邮件
+	 * @param sendTo
+	 * @return
+	 */
+	public BaseEmail createResetPasswordEmail(String sendTo, EmailTemplate template){
+		BaseEmail email = new ResetPasswordEmail(sendTo, template);
+		email.config();
+		email.create();
+		return email;
+	}
+	
+	/**
+	 * 创建群组邮件
+	 * @return
+	 */
+	public BaseEmail createGroupNotifyEmail(){
+		//to-do
+		return null;
+	}
+	
+}

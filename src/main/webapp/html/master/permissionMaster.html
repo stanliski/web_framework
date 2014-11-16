@@ -1,0 +1,59 @@
+	
+	<div id="permission-tree">
+	
+	</div>
+	
+	<div id="permission-modal-div">
+		<!-- 新增节点模态窗 -->
+		<div id="add-tree-nodes" class="easyui-window" title="添加新菜单" data-options="modal:true,closed:true,iconCls:'icon-save'" >
+			
+			<div style="margin-bottom:10px">
+				<label>代码</label>
+				<input column="code" id="code" class="easyui-textbox easyui-validatebox form-submit"
+				 missingMessage="必填"
+				 style="width:250px;height:40px;padding:12px" 
+				 data-options="required:true,validType:'length[3,10]',prompt:'text',iconCls:'icon-mini-edit',iconWidth:38">
+			</div>
+			<div style="margin-bottom:10px">
+				<label>名称</label>
+				<input column="name" id="name" class="easyui-textbox easyui-validatebox form-submit" 
+				style="width:250px;height:40px;padding:12px" 
+				missingMessage="必填"
+				data-options="required:true,validType:'length[3,10]',prompt:'text',iconCls:'icon-mini-edit',iconWidth:38">
+			</div>
+			<div style="margin-bottom:10px">
+				<label>父节点</label>
+				<select column="p_id" id="p_id" class="textbox form-submit" 
+				style="width:250px;height:40px;padding:12px" >
+					<option value="0">根节点</option>
+				</select>
+			</div>
+			<div style="margin-bottom:10px">
+				<label>页面连接</label>
+				<input column="link" id="link" class="easyui-textbox easyui-validatebox form-submit" 
+				style="width:250px;height:40px;padding:12px" 
+				data-options="prompt:'text',iconCls:'icon-mini-edit',iconWidth:38">
+			</div>
+			<div style="margin-bottom:10px">
+				<label>序号</label>
+				<input column="order_no" id="order-no" class="easyui-textbox easyui-validatebox form-submit" 
+				style="width:250px;height:40px;padding:12px" 
+				missingMessage="必填"
+				data-options="required:true,validType:'length[3,10]',prompt:'text',iconCls:'icon-mini-edit',iconWidth:38">
+			</div>
+			<div id="permission-add-btn-div">
+				<a id="close" class="easyui-linkbutton" onclick="closeNodesModal()" data-options="iconCls:'icon-cancel'">
+					<span class="font-yh">关闭</span>
+				</a>
+				<a id="add" class="easyui-linkbutton" data-options="iconCls:'icon-add'">
+					<span class="font-yh">添加</span>
+				</a>
+			</div>
+		</div>
+	</div>	
+
+</html>
+<script type="text/javascript" src="js/master/permission-master.js"></script>
+
+
+
